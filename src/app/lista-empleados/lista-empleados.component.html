@@ -1,0 +1,92 @@
+<h2>Empleados de HotelesEOI</h2>
+<div class="card-block">
+  <form class="form">
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2 text-sm-right" for="filtrarNombres"
+        >Buscar nombre y apellidos:</label
+      >
+      <div class="col-sm-5">
+        <input
+          type="text"
+          [(ngModel)]="filtroBusqueda"
+          class="form-control"
+          name="filtrarNombres"
+          id="filtrarNombres"
+          placeholder="Buscando..."
+        />
+      </div>
+      <label class="col-form-label col-sm-5">
+        Buscando por: {{ filtroBusqueda }}</label
+      >
+    </div>
+  </form>
+</div>
+<table class="table table-striped">
+  <thead
+    class="table"
+    style="background-color: #81b61d; color: rgb(255, 255, 255)"
+  >
+    <tr>
+      <th>Nombre</th>
+      <th>Apellidos</th>
+      <th>Email</th>
+      <th>Telefono</th>
+      <th style="text-align: center">Más info.</th>
+      <th style="text-align: center">Modificaciones</th>
+      <th style="text-align: center">Borrar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let empleado of empleados|filtroBusqueda:filtroBusqueda">
+      <td>{{ empleado.nombre }}</td>
+      <td>{{ empleado.apellidos }}</td>
+      <td>{{ empleado.email }}</td>
+      <td>{{ empleado.telefono }}</td>
+      <td>
+        <div class="text-center">
+          <button
+            (click)="detallesEmpleado(empleado.id)"
+            class="btn btn-info"
+            style="
+              text-align: center;
+              background-color: #81b61d;
+              color: rgb(255, 255, 255);
+            "
+          >
+            Detalles
+          </button>
+        </div>
+      </td>
+      <td>
+        <div class="text-center">
+          <button
+            (click)="modificarEmpleado(empleado.id)"
+            class="btn btn-info"
+            style="
+              text-align: center;
+              background-color: #303030;
+              color: rgb(255, 255, 255);
+            "
+          >
+            Modificar
+          </button>
+        </div>
+      </td>
+      <td>
+        <div class="text-center">
+          <button
+            (click)="eliminarEmpleado(empleado.id)"
+            class="btn btn-info"
+            style="
+              margin-left: 10px;
+              background-color: #df0b0b;
+              color: rgb(255, 255, 255);
+            "
+          >
+            Borrar
+          </button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

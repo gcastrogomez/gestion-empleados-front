@@ -1,0 +1,73 @@
+<h2>Información del empleado</h2>
+<br>
+<div class="container">
+  <div style="float: right; text-align: center;" >
+    <img src="{{empleado.imagen}}"alt="" class="img-thumbnail" style="width: 250px;height: 250px;">
+    <div>
+      <label for="nombre"> <b>{{ empleado.nombre }}</b> </label>
+      <div class="col"><label for="evaluacion">Evaluación: </label><span *ngFor="let star of [1,2,3,4,5,6,7,8,9,10]" class="fa-star"
+        [ngClass]="{'fas': star <= auxEvaluacion, 'far': star > auxEvaluacion}"></span></div>
+    </div>
+  </div>
+  <div>
+    <label for="id"> <b>ID :</b> {{ empleado.id }} </label>
+  </div>
+
+  <div>
+    <label for="nombre"> <b>Nombre :</b> {{ empleado.nombre }} </label>
+  </div>
+
+  <div>
+    <label for="apellidos"> <b>Apellidos :</b> {{ empleado.apellidos }} </label>
+  </div>
+
+  <div>
+    <label for="email"> <b>Email :</b> {{ empleado.email }} </label>
+  </div>
+
+  <div>
+    <label for="telefono"> <b>Telefono :</b> {{ empleado.telefono }} </label>
+  </div>
+
+  <div>
+    <label for="fechaNacimiento">
+      <b>Fecha de nacimiento :</b> {{ empleado.fechaNacimiento}}
+    </label>
+  </div>
+  <div>
+    <label for="departamento">
+      <b>Departamento :</b> {{ empleado.departamento}}
+    </label>
+  </div>
+  <div>
+    <label for="fechaContratacion">
+      <b>Fecha de contratación :</b> {{ empleado.fechaContratacion}}
+    </label>
+  </div>
+
+  <div>
+    <label for="salario"> <b>Salario anual: </b> {{ empleado.salario | currency:'EUR':'symbol' }} </label>
+  </div>
+
+  <div>
+    <label for="numeroSS">
+      <b>Número de la Seguridad Social: </b> {{ empleado.numeroSS }}
+    </label>
+  </div>
+
+  <div>
+    <label for="direccion"> <b>Dirección: </b> {{ empleado.direccion }} </label>
+  </div>
+</div>
+  <br>
+  <br />
+  <div class="col-xs-6 col-md-6" style="text-align: right">
+    <input
+      type="button"
+      value="Volver a la lista"
+      (click)="volverLista()"
+      class="btn"
+      style="background-color: #81b61d; color: rgb(255, 255, 255)"
+      title="Añadir datos del nuevo empleado"
+    />
+  </div>

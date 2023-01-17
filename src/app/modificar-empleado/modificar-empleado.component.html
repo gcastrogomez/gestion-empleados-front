@@ -1,0 +1,269 @@
+<div class="container">
+  <h2>Modificando un empleado de HotelesEOI</h2>
+  <br />
+  <form (ngSubmit)="enviarFormulario()" role="form" #formEmpleado="ngForm">
+    <div class="well">
+      <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          <div class="form-group">
+            <label for="nombre">Nombre: </label>
+            <input
+              type="text"
+              class="form-control"
+              id="nombre"
+              name="nombre"
+              [(ngModel)]="empleado.nombre"
+              required
+              placeholder="Indique el nombre"
+              #nombre="ngModel"
+            />
+            <div class="alert alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+              <div *ngIf="nombre.errors.required">
+                Indique el nombre, por favor.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          <div class="form-group">
+            <label for="apellidos">Apellidos: </label>
+            <input
+              type="text"
+              class="form-control"
+              id="apellidos"
+              name="apellidos"
+              [(ngModel)]="empleado.apellidos"
+              required
+              placeholder="Indique los apellidos"
+              #apellidos="ngModel"
+            />
+            <div class="alert alert-danger" *ngIf="apellidos.invalid && (apellidos.dirty || apellidos.touched)">
+              <div *ngIf="apellidos.errors.required">
+                Indique los apellidos, por favor.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          <div class="form-group">
+            <label for="email">Email: </label>
+            <input
+              type="text"
+              class="form-control"
+              id="email"
+              name="email"
+              pattern=".+@gmail\.com"
+              [(ngModel)]="empleado.email"
+              required
+              placeholder="Indique el email"
+              #email="ngModel"
+            />
+            <div class="alert alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+              <div *ngIf="email.errors.required">
+                Indique el email, por favor.
+              </div>
+              <div *ngIf="email.errors.pattern">
+                Indique el email, por favor.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          <div class="form-group">
+            <label for="telefono">Teléfono: </label>
+            <input
+              type="text"
+              class="form-control"
+              id="telefono"
+              name="telefono"
+              [(ngModel)]="empleado.telefono"
+              required
+              placeholder="Indique el número de teléfono"
+              #telefono="ngModel"
+            />
+            <div class="alert alert-danger" *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)">
+              <div *ngIf="telefono.errors.required">
+                Indique el número de teléfono, por favor.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          <div class="form-group">
+            <label for="date">Fecha de nacimiento: </label>
+            <input
+              type="date"
+              class="form-control"
+              name="fechaNacimiento"
+              [(ngModel)]="empleado.fechaNacimiento"
+              placeholder="yyyy-mm-dd"
+            />
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          <div class="form-group">
+            <label for="date">Fecha de contratación: </label>
+            <input
+              type="date"
+              class="form-control"
+              name="fechaContratacion"
+              [(ngModel)]="empleado.fechaContratacion"
+              placeholder="yyyy-mm-dd"
+            />
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          <div class="form-group">
+            <label for="salario">Salario: </label>
+            <input
+              type="number"
+              class="form-control"
+              name="salario"
+              min="0.00"
+              step="0.01"
+              [(ngModel)]="empleado.salario"
+              placeholder="€"
+              required
+              placeholder="Indique el salario"
+              #salario="ngModel"
+            />
+            <div class="alert alert-danger" *ngIf="salario.invalid && (salario.dirty || salario.touched)">
+              <div *ngIf="salario.errors.required">
+                Indique el salario, por favor.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          <div class="form-group">
+            <label for="numeroSS">Numero de la Seguridad Social: </label>
+            <input
+              type="text"
+              class="form-control"
+              id="numeroSS"
+              name="numeroSS"
+              [(ngModel)]="empleado.numeroSS"
+              required
+              placeholder="Indique el número de la Seguridad Social"
+              #numeroSS="ngModel"
+            />
+            <div class="alert alert-danger" *ngIf="numeroSS.invalid && (numeroSS.dirty || numeroSS.touched)">
+              <div *ngIf="numeroSS.errors.required">
+                Indique el número de la Seguridad Social, por favor.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="form-group">
+          <label>Dirección: </label>
+          <input
+            type="text"
+            class="form-control"
+            id="direccion"
+            name="direccion"
+            [(ngModel)]="empleado.direccion"
+            required
+            placeholder="Indique la dirección"
+            #direccion="ngModel"
+          />
+          <div class="alert alert-danger" *ngIf="direccion.invalid && (direccion.dirty || direccion.touched)">
+            <div *ngIf="direccion.errors.required">
+              Indique la dirección, por favor.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          <div class="form-group">
+            <span>Departamento:  </span>
+            <select
+              name="departamento"
+              id="separtamento"
+              [(ngModel)]="empleado.departamento"
+            >
+              <option value="Direccion">Dirección</option>
+              <option value="Recepcion">Recepción</option>
+              <option value="RRHH">Recursos Humanos</option>
+              <option value="Restaurante">Restaurante</option>
+              <option value="Limpieza">Limpieza</option>
+              <option value="Contabilidad">Contabilidad</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          <div class="form-group">
+            <label>Imagen: </label>
+            <input
+              type="text"
+              class="form-control"
+              id="imagen"
+              name="imagen"
+              [(ngModel)]="empleado.imagen"
+              required
+              placeholder="Introduzca la url de la imagen"
+              #imagen="ngModel"
+            />
+            <div
+              class="alert alert-danger"
+              *ngIf="
+                direccion.invalid && (direccion.dirty || direccion.touched)
+              "
+            >
+              <div *ngIf="direccion.errors.required">
+                Indique la dirección, por favor.
+              </div>
+            </div>
+            <div>
+              <img
+                src="{{ empleado.imagen }}"
+                alt=""
+                class="img-thumbnail"
+                style="width: 250px; height: 250px"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <label>Evaluación: </label>
+        <div class="col"><star-rating [evaluacion]="empleado.evaluacion" (ratingChanged)="changeRating($event)">{{(empleado.evaluacion)}}</star-rating></div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-xs-6 col-md-6">
+          <input
+            type="submit"
+            value="Modificar empleado"
+            class="btn"
+            style="background-color: #81b61d; color: rgb(255, 255, 255)"
+            title="Añadir datos del nuevo empleado"
+            [disabled]="!formEmpleado.form.valid"
+          />
+        </div>
+        <div class="col-xs-6 col-md-6" style="text-align: right">
+          <input
+            type="button"
+            value="Cancelar"
+            (click)="volverLista()"
+            class="btn"
+            style="background-color: #df0b0b; color: rgb(255, 255, 255)"
+            title="Añadir datos del nuevo empleado"
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
