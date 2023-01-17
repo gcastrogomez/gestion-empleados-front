@@ -2,9 +2,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.1. Employee management is my project of the Full Stack Programming course at the School of Industrial Organizations, taught at the end of 2022. It's the front of the back project that is in the repository:
 
----
-github.com/gcastrogomez/gestion-empleados
----
+```
+https://github.com/gcastrogomez/gestion-empleados
+```
 
 ## Development server
 
